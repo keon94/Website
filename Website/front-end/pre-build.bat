@@ -1,7 +1,7 @@
 @echo off
 
 set tmplDir=resource/tmpl/
-set tmplMaker=python %tmplDir%cppcms_tmpl_cc.py
+set tmplMaker=python cppcms_tmpl_cc.py
 
 %tmplMaker% %tmplDir%Home.tmpl -o src/Home.cpp
 

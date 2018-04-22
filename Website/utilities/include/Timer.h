@@ -28,8 +28,8 @@ private:
 			unsigned operator()() const {
 				return _value;
 			}
-			inline bool wasReset() const {
-				return _reset;
+			inline bool wasReset() {
+				return _reset ? !(_reset = false) : false;
 			}
 	};
 

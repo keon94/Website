@@ -112,6 +112,9 @@
       <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(ProcessorArchitecture)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>booster-d.lib;cppcms-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>post-build.bat $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,6 +129,9 @@
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(ProcessorArchitecture)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>post-build.bat $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -144,6 +150,9 @@
     <PreBuildEvent>
       <Command>pre-build.bat</Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>post-build.bat $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -162,10 +171,15 @@
     <PreBuildEvent>
       <Command>pre-build.bat</Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>post-build.bat $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="post-build.bat" />
     <None Include="pre-build.bat" />
-    <None Include="resource\tmpl\cppcms_tmpl_cc.py" />
+    <None Include="resource\css\Home.css" />
+    <None Include="cppcms_tmpl_cc.py" />
     <None Include="resource\tmpl\Home.tmpl" />
   </ItemGroup>
   <ItemGroup>

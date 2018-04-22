@@ -15,11 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resource\tmpl\cppcms_tmpl_cc.py" />
     <None Include="pre-build.bat">
       <Filter>Source Files</Filter>
     </None>
     <None Include="resource\tmpl\Home.tmpl" />
+    <None Include="resource\css\Home.css" />
+    <None Include="post-build.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="cppcms_tmpl_cc.py" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Home.cpp">

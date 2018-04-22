@@ -1,5 +1,5 @@
-#ifndef MAIN_CONTROLLER_H_
-#define MAIN_CONTROLLER_H_
+#ifndef WEB_INITIALIZER_H_
+#define WEB_INITIALIZER_H_
 
 #pragma warning(push)  
 #pragma warning(disable : 4101)  
@@ -13,13 +13,14 @@
 
 #pragma warning(pop)  
 
-#include <iostream> 
 
-class MainController : public cppcms::application {
+class WebInitializer : public cppcms::application {
+
 public:
-	MainController(cppcms::service &srv) : cppcms::application(srv) {}
+	
+	WebInitializer(cppcms::service &srv);
 
-	virtual void main(std::string url);
+	void defaultPage();
 };
 
 #endif
